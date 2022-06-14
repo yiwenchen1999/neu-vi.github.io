@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="PlanarRecon: Real-time 3D Plane Detection and Reconstruction from Posed Monocular Videos.">
+  <meta name="keywords" content="PlanarRecon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlanarRecon</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">PlanarRecon: Real-time 3D Plane Detection and Reconstruction from Posed Monocular Videos</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://ymingxie.github.io/">Yiming Xie</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="http://mgadelha.me/">Matheus Gadelha</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="http://personal.psu.edu/fuy34/">Fengting Yang</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xzhou.me/">Xiaowei Zhou</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jianghz.me/">Huaizu Jiang</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Northeastern University,</span>
+            <span class="author-block"><sup>2</sup>Zhejiang University,</span>
+            <span class="author-block"><sup>3</sup>Adobe Research,</span>
+            <span class="author-block"><sup>4</sup>The Pennsylvania State University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Xie_PlanarRecon_Real-Time_3D_Plane_Detection_and_Reconstruction_From_Posed_Monocular_CVPR_2022_paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://neu-vi.github.io/planarrecon/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/neu-vi/planarrecon"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop height="100%"> -->
+        <source src="./static/images/incremental_bos.m4v"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">PlanarRecon</span> can detect and reconstruct 3D planes from a posed monocualr video.
+      </h2>
+      <h5 class="has-text-centered">
+        (Data is captured around the apartment with an iPhone XR, and the camera poses are obtained from ARKit. The model used here is only trained on ScanNet.)
+      </h5>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item 4602">
+          <video poster="" id="steve" autoplay controls muted loop height="100%">
+            <source src="./static/images/comparison_4602.m4v"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 559">
+          <video poster="" id="steve1" autoplay controls muted loop height="100%">
+            <source src="./static/images/comparison_559.m4v"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 277">
+          <video poster="" id="steve2" autoplay controls muted loop height="100%">
+            <source src="./static/images/comparison_277.m4v"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="steve3" autoplay controls muted loop height="100%">
+            <source src="./static/images/comparison_100.m4v"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present PlanarRecon – a novel framework for globally coherent detection and reconstruction of 3D planes from a posed monocular video. 
+            Unlike previous works that detect planes in 2D from a single image, PlanarRecon incrementally detects planes in 3D for each video fragment, which consists of a set of key frames, from a volumetric representation of the scene using neural networks. 
+            A learning-based tracking and fusion module is designed to merge planes from previous fragments to form a coherent global plane reconstruction. 
+            Such design allows PlanarRecon to integrate observations from multiple views within each fragment and temporal information across different ones, resulting in an accurate and coherent reconstruction of the scene abstraction with low-polygonal geometry. 
+            Experiments show that the proposed approach achieves state-of-the-art performances on the ScanNet dataset while being real-time.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview Video</h2>
+        <div class="publication-video">
+          <iframe style="clip-path: inset(1px 1px)" width="100%" height="100%" src="https://www.youtube.com/embed/yPN95TjifzI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-3">Animation</h2> -->
+
+        <!-- Interpolating. -->
+        <!-- <h3 class="title is-4">Comparison with state-of-the-art methods</h3>
+        <div class="content has-text-justified">
+          <p>
+            ScanNet Scene0559:
+          </p>
+        </div> -->
+
+        <!-- <br/> -->
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Reconstruction showcase</h3>
+        <div class="content has-text-justified">
+          <p>
+            Colored planes mean different instances. We also show the textured mesh for ScanNet0100_00.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <iframe style="clip-path: inset(1px 1px)" width="850" height="450" src="https://sketchfab.com/playlists/embed?autostart=1&autospin=0.25&amp;collection=2f3331ad2df24032a0e17781c6544889&autostart=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" mozallowfullscreen="true" webkitallowfullscreen="true">
+          </iframe>
+        <!-- <div class="embed-responsive embed-responsive-16by9">
+            <iframe style="clip-path: inset(1px 1px)" width="100%" height="100%" src="https://sketchfab.com/playlists/embed?autostart=1&autospin=0.25&amp;collection=bd885db8684e4876976bd6616eda7ade" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div> -->
+        </div>
+        <!--/ Re-rendering. -->
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">AR Demo</h3>
+        <div class="content has-text-justified">
+        </div>
+        <div class="content has-text-centered">
+          <video id="dollyzoom" autoplay controls muted loop height="100%">
+            <source src="static/images/ar_highr.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{xie2022planarrecon,
+  title={{PlanarRecon}: Real-Time {3D} Plane Detection and Reconstruction from Posed Monocular Videos},
+  author={Xie, Yiming and Gadelha, Matheus and Yang, Fengting and Zhou, Xiaowei and Jiang, Huaizu},
+  booktitle={CVPR},
+  year={2022}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Thanks to <a href="https://keunhong.com/">Keunhong Park</a> for the <a href="https://nerfies.github.io/">website template</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
