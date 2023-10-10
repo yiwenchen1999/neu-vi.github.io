@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="OmniControl: Control Any Joint at Any Time for Human Motion Generation">
+  <meta name="keywords" content="OmniControl">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OmniControl</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">OmniControl: Control Any Joint at Any Time for Human Motion Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://ymingxie.github.io/">Yiming Xie</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://varunjampani.github.io/">Varun Jampani</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://neu-vi.github.io/omnicontrol">Lei Zhong</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://deqings.github.io/">Deqing Sun</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jianghz.me/">Huaizu Jiang</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Northeastern University,</span>
+            <span class="author-block"><sup>2</sup>Google Research</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/0000.00000.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/neu-vi/omnicontrol"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+<!-- <section class="hero teaser"> -->
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop height="100%">
+        <source src="./static/images/teaser_all.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">OmniControl</span> can generate realistic human motions given a text prompt and <br>
+        flexible spatial control signals.
+      </h2>
+      <h5 class="has-text-centered">
+        Darker color indicates later frames in the sequence. The green line or points indicate the input control signals.
+      </h5>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present a novel approach named OmniControl for incorporating flexible spatial control signals into a text-conditioned human motion generation model based on the diffusion process. 
+            Unlike previous methods that can only control the pelvis trajectory, OmniControl can incorporate flexible spatial control signals over different joints at different times with only one model. 
+            Specifically, we propose analytic spatial guidance that ensures the generated motion can tightly conform to the input control signals. 
+            At the same time, realism guidance is introduced to refine all the joints to generate more coherent motion. 
+            Both the spatial and realism guidance are essential and they are highly complementary for balancing control accuracy and motion realism. 
+            By combining them, OmniControl generates motions that are realistic, coherent, and consistent with the spatial constraints. 
+            Experiments on HumanML3D and KIT-ML datasets show that OmniControl not only achieves significant improvement over state-of-the-art methods on pelvis control but also shows promising results when incorporating the constraints over other joints. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <div class="column">
+            <img src="./static/images/arch_png.png" />
+          </div>
+
+          <p>
+            Our model generates human motions from the text prompt and spatial control signal.
+            At the denoising diffusion step, the model takes the text prompt and a noised motion sequence as input and estimates the clean motion.
+            To incorporate flexible spatial control signals into the generation process, a hybrid guidance, consisting of realism and spatial guidance, is used to encourage motions to conform to the control signals while being realistic.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview Video</h2>
+        <div class="publication-video">
+          <iframe style="clip-path: inset(1px 1px)" width="100%" height="100%" src="https://www.youtube.com/embed/yPN95TjifzI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Results</h2>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-4"><i>(all results are generated using one model)</i></h2>
+    </div>    
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-4"><span style="color:#6F864D";>Dense</span> signals on <span style="color:#6C91C2";>pelvis</span></h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item 4602">
+          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+            <source src="./static/images/pelvis_circle.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 559">
+          <video poster="" id="pelvis1" autoplay controls muted loop height="100%">
+            <source src="./static/images/pelvis_longs.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 277">
+          <video poster="" id="pelvis2" autoplay controls muted loop height="100%">
+            <source src="./static/images/pelvis_runlong.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis3" autoplay controls muted loop height="100%">
+            <source src="./static/images/pelvis_s.mp4"
+                    type="video/mp4">
+        </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis4" autoplay controls muted loop height="100%">
+            <source src="./static/images/pelvis_duck_walk.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis5" autoplay controls muted loop height="100%">
+            <source src="./static/images/pelvis_step_hold.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+<br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-4"><span style="color:#6F864D";>Sparse</span> signals on <span style="color:#6C91C2";>pelvis</span></h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item 4602">
+          <video poster="" id="pelvis6" autoplay controls muted loop height="100%">
+            <source src="./static/images/pelvis_sparse_run.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 559">
+          <video poster="" id="pelvis7" autoplay controls muted loop height="100%">
+            <source src="./static/images/pelvis_sparse_sit.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 277">
+          <video poster="" id="pelvis8" autoplay controls muted loop height="100%">
+            <source src="./static/images/pelvis_sparse_s.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="pelvis9" autoplay controls muted loop height="100%">
+            <source src="./static/images/pelvis_sparse_lineseg.mp4"
+                    type="video/mp4">
+        </video>
+        </div>
+      </div>
+    </div>
+
+
+<br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-4"><span style="color:#6F864D";>Dense/Sparse</span> signals on left/right <span style="color:#6C91C2";>wrist</span></h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item 4602">
+          <video poster="" id="wrist" autoplay controls muted loop height="100%">
+            <source src="./static/images/leftwrist_sparse_pick.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 559">
+          <video poster="" id="wrist1" autoplay controls muted loop height="100%">
+            <source src="./static/images/leftwrist_dense_pick.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 277">
+          <video poster="" id="wrist2" autoplay controls muted loop height="100%">
+            <source src="./static/images/rightwrist_dense_armrest.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="wrist3" autoplay controls muted loop height="100%">
+            <source src="./static/images/rightwrist_sparse_move.mp4"
+                    type="video/mp4">
+        </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="wrist4" autoplay controls muted loop height="100%">
+            <source src="./static/images/rightwrist_sparse_pickoff.mp4"
+                    type="video/mp4">
+        </video>
+        </div>
+      </div>
+    </div>
+
+
+<br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-4"><span style="color:#6F864D";>Dense/Sparse</span> signals on <span style="color:#6C91C2";>head</span></h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item 100">
+          <video poster="" id="head" autoplay controls muted loop height="100%">
+            <source src="./static/images/head_sparse_bow.mp4"
+                    type="video/mp4">
+        </video>
+        </div>
+        <div class="item 559">
+          <video poster="" id="head1" autoplay controls muted loop height="100%">
+            <source src="./static/images/head_dense_s.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 277">
+          <video poster="" id="head2" autoplay controls muted loop height="100%">
+            <source src="./static/images/head_sparse_jump.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="head3" autoplay controls muted loop height="100%">
+            <source src="./static/images/head_dense_injured.mp4"
+                    type="video/mp4">
+        </video>
+        </div>
+        <div class="item 4602">
+          <video poster="" id="head4" autoplay controls muted loop height="100%">
+            <source src="./static/images/head_dense_walk.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+
+<br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-4"><span style="color:#6F864D";>Dense/Sparse</span> signals on left/right <span style="color:#6C91C2";>foot</span></h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item 4602">
+          <video poster="" id="foot" autoplay controls muted loop height="100%">
+            <source src="./static/images/leftfoot_sparse_kick.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 559">
+          <video poster="" id="foot1" autoplay controls muted loop height="100%">
+            <source src="./static/images/rightfoot_sparse_kick.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 277">
+          <video poster="" id="foot2" autoplay controls muted loop height="100%">
+            <source src="./static/images/rightfoot_sparse_jump.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="foot3" autoplay controls muted loop height="100%">
+            <source src="./static/images/rightfoot_sparse_walk.mp4"
+                    type="video/mp4">
+        </video>
+        </div>
+      </div>
+    </div>
+
+
+<br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-4">Control <span style="color:#6F864D";>multiple joints</h2>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item 4602">
+          <video poster="" id="multiple" autoplay controls muted loop height="100%">
+            <source src="./static/images/rightwrist_head_walk.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 559">
+          <video poster="" id="multiple1" autoplay controls muted loop height="100%">
+            <source src="./static/images/all_sparse_move.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 277">
+          <video poster="" id="multiple2" autoplay controls muted loop height="100%">
+            <source src="./static/images/wrist_dense_pick.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item 100">
+          <video poster="" id="multiple3" autoplay controls muted loop height="100%">
+            <source src="./static/images/lrwrist_sparse_push.mp4"
+                    type="video/mp4">
+        </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <br>
+  <div class="container is-max-desktop">
+    <!-- comparison. -->
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Comparing to other methods on pelvis control</h2>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        Previous methods mainly focus on incorporating global spatial control signals on <i>pelvis</i>. 
+        So we compare to GMD [Karunratanakul et al. (2023)] only on pelvis control. We also show the results without the spatial control signal for reference.
+      </p>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        Two spatial points are given here as spatial constraints in the following case, and they are close to the ground so the human need to crouch to approach the point. 
+        You can see that the motion generated from GMD fails to do that.
+        <!-- Our method can perfectly align the input spatial constraints -->
+      </p>
+    </div>
+    <div class="content has-text-centered">
+      <video id="replay-video"
+              autoplay  
+              controls
+              muted
+              preload
+              loop
+              playsinline
+              width="100%">
+        <source src="./static/images/comparison.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        Compared to the results without spatial constraints, the controllable motion generation can produce the motions that follow the given trajectory.
+        The upper body motion of ours is more consistent to the input text prompt. 
+        <!-- The hands in GMD are always shaking whereas ours are holding something. -->
+      </p>
+    </div>
+    <div class="content has-text-centered">
+      <video id="replay-video"
+              autoplay  
+              controls
+              muted
+              preload
+              loop
+              playsinline
+              width="100%">
+        <source src="./static/images/comparison1.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+    <!--/ comparison. -->
+  </div>
+</section>
+
+
+
+<section class="hero is-light is-small">
+  <div class="container is-max-desktop">
+    <br>
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Ablation studies</h2>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        <b>Text prompt</b>: a person plays a violin with their left hand in the air and their right hand holding the bow.
+      </p>
+    </div>
+    <div class="columns is-centered">
+
+      <!-- W/o realism guidance. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">W/o realism guidance</h2>
+          <p>
+            Without <i>realism guidance</i>, the model cannot amend the rest of the joints, yielding unreal and incoherent motions.
+          </p>
+          <video id="realism" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/images/ablation/wo_controlnet.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ W/o realism guidance. -->
+
+      <!-- W/o spatial guidance. -->
+      <div class="column">
+        <h2 class="title is-4">W/o spatial guidance</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              Without <i>spatial guidance</i>, the generated motion cannot tightly follow the spatial constraints.
+            </p>
+            <video id="spatial" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/images/ablation/wo_guide.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ W/o spatial guidance. -->
+    <div class="columns is-centered">
+
+      <!-- Gradient w.r.t x_t. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Gradient w.r.t x_t</h2>
+          <p>
+            We report the performance of a variant which computes the gradient w.r.t the input noised motion in spatial guidance.
+          </p>
+          <video id="gradient" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/images/ablation/gradient_noise.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Gradient w.r.t x_t. -->
+
+      <!-- Full model. -->
+      <div class="column">
+        <h2 class="title is-4">Full model</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              The visualization validates that our full model is much more effective in terms of both realism and controlling accuracy.
+            </p>
+            <video id="full" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/images/ablation/full_model.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+<br>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{xie2023omnicontrol,
+      title={OmniControl: Control Any Joint at Any Time for Human Motion Generation},
+      author={Yiming Xie and Varun Jampani and Lei Zhong and Deqing Sun and Huaizu Jiang},
+      year={2023},
+      eprint={2310.xxxxx},
+  }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Thanks to <a href="https://keunhong.com/">Keunhong Park</a> for the <a href="https://nerfies.github.io/">website template</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
