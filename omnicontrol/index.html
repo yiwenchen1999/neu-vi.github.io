@@ -616,6 +616,91 @@
 </section>
 
 
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <br>
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Downstream application</h2>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        Our method can be combined with affordance learning works which can generate the contacting area (spatial control signal) to guide the human motion generation with the surrounding objects or environment. 
+        Note that our model doesn't generate the spatial control signals. 
+        We manually give the control signals based on the the position of objects in the scene for now.
+        <!-- The objects are manually inserted based on the input spatial control signals. -->
+      </p>
+    </div>
+    <div class="columns is-centered">
+
+      <!-- sit. -->
+      <div class="column">
+        <div class="content">
+          <p>
+            To sit exactly in the chair we control the pelvis position.
+          </p>
+          <br>
+          <video id="realism" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/images/application/app_sit.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ sit. -->
+
+      <!-- walk. -->
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              To keep the left hand on the armrest and avoid the ceiling fan, we control both head and left wrist positions.
+            </p>
+            <video id="spatial" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/images/application/app_walk.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ walk. -->
+    <div class="columns is-centered">
+
+      <!-- pick. -->
+      <div class="column">
+        <div class="content">
+          <p>
+            To exactly touch the cup we control the left wrist position.
+          </p>
+          <video id="gradient" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/images/application/app_pick.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ pick. -->
+
+      <!-- kicks. -->
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              To exactly kick the ball we control the left foot position.
+            </p>
+            <video id="full" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/images/application/app_kicks.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+<br>
+</section>
+
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
