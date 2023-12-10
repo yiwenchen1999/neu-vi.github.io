@@ -57,20 +57,20 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Xiaogang Peng</a><sup>1,2*</sup>,</span>
+                <a href="https://xiaogangpeng.github.io/" target="_blank">Xiaogang Peng</a><sup>1,2*</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Yiming Xie</a><sup>1*</sup>,</span>
+                  <a href="https://ymingxie.github.io/" target="_blank">Yiming Xie</a><sup>1*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zizhao Wu</a>,<sup>2</sup>
+                    <a href="https://zizhao.me/" target="_blank">Zizhao Wu</a><sup>2</sup>,
                   </span>
                   <span class="author-block">
-                    <a href="Fourth AUTHOR PERSONAL LINK" target="_blank">Varun Jampani</sup></a>,<sup>3</sup>
+                    <a href="https://varunjampani.github.io/" target="_blank">Varun Jampani</sup></a><sup>3</sup>,
                   </span>
                   <span class="author-block">
-                    <a href="Fifth AUTHOR PERSONAL LINK" target="_blank">Deqing Sun</sup></a>,<sup>3</sup>
+                    <a href="https://deqings.github.io/" target="_blank">Deqing Sun</sup></a><sup>4</sup>,
                   </span>
                   <span class="author-block">
-                    <a href="Sixth AUTHOR PERSONAL LINK" target="_blank">Huaizu Jiang</sup></a><sup>1</sup>
+                    <a href="https://jianghz.me/" target="_blank">Huaizu Jiang</sup></a><sup>1</sup>
                   </span>
                   </div>
 
@@ -148,19 +148,24 @@
 
 
 
-<!-- Paper poster -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container, is-centered, has-text-centered">
-        <!-- <h2 class="title">Poster</h2> -->
-        <img  src="static/images/teaser.png" width="50%" height=auto scrolling="no" frameborder="0" >
-        </img>
-          <h2 class="subtitle is-6">HOI-Diff can generate realistic motions for 3D human-object interactions given a text prompt and object geometry.</h2>
-        </div>
-      </div>
-    </section>
 
-<!--End paper poster -->
+<section class="her is-small">
+  <div class="hero-body">
+<!-- <section class="hero teaser"> -->
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img  src="static/images/teaser.png" width="100%" height=auto scrolling="no" frameborder="0" >
+      </img>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">HOI-Diff</span> can generate realistic motions for 3D human-object interactions given a text prompt and object geometry.
+      </h2>
+      <!-- <h5 class="has-text-centered">
+        Darker color indicates later frames in the sequence. The green line or points indicate the input control signals.
+      </h5> -->
+    </div>
+  </div>
+  </div>
+</section>
 
 
 <!-- Paper abstract -->
@@ -214,9 +219,11 @@
     <div class="columns is-centered has-text-centered">
       <h2 class="title is-4">Interacting with <span style="color:#6F864D";>Dynamic</span> Objects</h2>
     </div>
-      <div class="results-list">
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>A person is <span style="color:#EE822F";>hoisting</span> a trashbin with his <span style="color:#5e7dbd";>left hand</span>.</i></h2>
+    <br>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>A person is <span style="color:#EE822F";>hoisting</span> a trashbin with his <span style="color:#5e7dbd";>left hand</span>.</i></h2>
           <div class="videobox">
           <video poster="" id="pelvis" autoplay controls muted loop height="100%">
             <source src="./static/images/trashbin_lift.mp4"
@@ -224,31 +231,40 @@
           </video>
           </div>
         </div>
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>The individual is <span style="color:#EE822F";>lifting</span> the chairwood with his <span style="color:#5e7dbd";>right hand</span>.</i></h2>
+      </div>
+
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>The individual is <span style="color:#EE822F";>lifting</span> the chairwood with his <span style="color:#5e7dbd";>right hand</span>.</i></h2>
           <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/chairwood_lift.mp4"
-                    type="video/mp4">
-          </video>
-          </div>
-        </div>
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>A person <span style="color:#EE822F";>holds</span> a toolbox aloft with his <span style="color:#5e7dbd";>right hand</span>.</i></h2>
-          <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/toolbox_hand.mp4"
-                    type="video/mp4">
-          </video>
+            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+              <source src="./static/images/chairwood_lift.mp4"
+                      type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
 
+      <div class="column">
+          <div class="content has-text-centered">
+            <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>A person <span style="color:#EE822F";>holds</span> a toolbox aloft with his <span style="color:#5e7dbd";>right hand</span>.</i></h2>
+            <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+              <source src="./static/images/toolbox_hand.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
 
-      <div class="results-list">
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i> A person is <span style="color:#EE822F";>hoisting</span> the boxlarge with his <span style="color:#5e7dbd";>right hand</span>.</i></h2>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i> A person is <span style="color:#EE822F";>hoisting</span> the boxlarge with his <span style="color:#5e7dbd";>right hand</span>.</i></h2>
           <div class="videobox">
           <video poster="" id="pelvis" autoplay controls muted loop height="100%">
             <source src="./static/images/boxlarge_righthand.mp4"
@@ -256,129 +272,155 @@
           </video>
           </div>
         </div>
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>An individual <span style="color:#EE822F";>raises</span> the backpack with his <span style="color:#5e7dbd";>right hand</span>.</i></h2>
+      </div>
+
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>An individual <span style="color:#EE822F";>raises</span> the backpack with his <span style="color:#5e7dbd";>right hand</span>.</i></h2>
           <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/backpack_lift.mp4"
-                    type="video/mp4">
-          </video>
-          </div>
-        </div>
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>An individual has a firm <span style="color:#EE822F";>hold</span> on the toolbox <span style="color:#5e7dbd";>from the front</span>.</i></h2>
-          <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/toolbox_hold.mp4"
-                    type="video/mp4">
-          </video>
+            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+              <source src="./static/images/backpack_lift.mp4"
+                      type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
 
-
-      <div class="results-list">
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i> A person is <span style="color:#EE822F";>bouncing</span> on a yogaball with <span style="color:#5e7dbd";>two hands</span>.</i></h2>
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>An individual has a firm <span style="color:#EE822F";>hold</span> on the toolbox <span style="color:#5e7dbd";>from the front</span>.</i></h2>
           <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/yogaball_bounce.mp4"
-                    type="video/mp4">
-          </video>
-          </div>
-        </div>
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>A person <span style="color:#EE822F";>holds</span> a yogamat <span style="color:#5e7dbd";>in fromt him</span>.</i></h2>
-          <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/yogamat_grip.mp4"
-                    type="video/mp4">
-          </video>
-          </div>
-        </div>
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>The person is <span style="color:#EE822F";>lifting</span> the suitcase with his <span style="color:#5e7dbd";>right hand</span>.</i></h2>
-          <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/suitcase_lift.mp4"
-                    type="video/mp4">
-          </video>
+            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+              <source src="./static/images/toolbox_hold.mp4"
+                      type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="results-list">
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>A person is <span style="color:#EE822F";>gripping</span> a large box <span style="color:#5e7dbd";>at the front</span>.</i></h2>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i> A person is <span style="color:#EE822F";>bouncing</span> on a yogaball with <span style="color:#5e7dbd";>two hands</span>.</i></h2>
           <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/boxlarge_hold.mp4"
-                    type="video/mp4">
-          </video>
-          </div>
-        </div>
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>Someone is <span style="color:#EE822F";>holding</span> a long box with his <span style="color:#5e7dbd";>left hand</span>.</i></h2>
-          <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/boxlong_hold.mp4"
-                    type="video/mp4">
-          </video>
-          </div>
-        </div>
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>The person is transferring the small table by <span style="color:#EE822F";>pushing and pulling</span> it on the ground.</i></h2>
-          <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/tablesmall_push.mp4"
-                    type="video/mp4">
-          </video>
+            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+              <source src="./static/images/yogaball_bounce.mp4"
+                      type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>A person <span style="color:#EE822F";>holds</span> a yogamat <span style="color:#5e7dbd";>in fromt him</span>.</i></h2>
+          <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+              <source src="./static/images/yogamat_grip.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>The person is <span style="color:#EE822F";>lifting</span> the suitcase with his <span style="color:#5e7dbd";>right hand</span>.</i></h2>
+          <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+              <source src="./static/images/suitcase_lift.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>A person is <span style="color:#EE822F";>gripping</span> a large box <span style="color:#5e7dbd";>at the front</span>.</i></h2>
+          <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+              <source src="./static/images/boxlarge_hold.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>Someone is <span style="color:#EE822F";>holding</span> a long box with his <span style="color:#5e7dbd";>left hand</span>.</i></h2>
+          <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+              <source src="./static/images/boxlong_hold.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content has-text-centered">
+          <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>The person is transferring the small table by <span style="color:#EE822F";>pushing and pulling</span> it on the ground.</i></h2>
+          <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+              <source src="./static/images/tablesmall_push.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
       <br>
       <div class="columns is-centered has-text-centered">
         <h2 class="title is-4">Interacting with <span style="color:#6F864D";>Static</span> Objects</h2>
       </div>
-
-      <div class="results-list">
-        
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"> <i>A person is <span style="color:#EE822F";>perching</span> on a stool.</i></h2>
-          <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/stool_sit.mp4"
-                    type="video/mp4">
-          </video>
+      <br>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"> <i>A person is <span style="color:#EE822F";>perching</span> on a stool.</i></h2>
+            <div class="videobox">
+              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                <source src="./static/images/stool_sit.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>A person is <span style="color:#EE822F";>occuping</span> a yogaball as seat.</i></h2>
-          <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/yogaball_sit.mp4"
-                    type="video/mp4">
-          </video>
+        <div class="column">
+          <div class="content has-text-centered">
+            <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>A person is <span style="color:#EE822F";>occuping</span> a yogaball as seat.</i></h2>
+            <div class="videobox">
+              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                <source src="./static/images/yogaball_sit.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>A person is <span style="color:#EE822F";>sitting</span> on the chair.</i></h2>
-          <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/chair_sit.mp4"
-                    type="video/mp4">
-          </video>
+        <div class="column">
+          <div class="content has-text-centered">
+            <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>A person is <span style="color:#EE822F";>sitting</span> on the chair.</i></h2>
+            <div class="videobox">
+              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                <source src="./static/images/chair_sit.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
-        <div class="item 4602 has-text-centered">
-          <h2 class="subtitle is-6" style="height: 35px;"><i>Someone is <span style="color:#EE822F";>seated</span> on a square table.</i></h2>
-          <div class="videobox">
-          <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-            <source src="./static/images/tablesquare_sit.mp4"
-                    type="video/mp4">
-          </video>
+        <div class="column">
+          <div class="content has-text-centered">
+            <h2 class="subtitle is-6" style="height: 35px; margin: left 5px; margin: right 5px"><i>Someone is <span style="color:#EE822F";>seated</span> on a square table.</i></h2>
+            <div class="videobox">
+              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                <source src="./static/images/tablesquare_sit.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
       </div>
@@ -412,154 +454,165 @@
       <div class="columns is-centered">
         <h2 class="subtitle is-6">The previous text-to-motion approaches primarily concentrated on generating human motions in isolation. Thus, we adapt two conventional methods, MDM [Tevet et al. (2023)] and PriorMDM [Shafir et al. (2023)], as our baseline models for comparative evaluation concerning human-object interactions.</h2>
       </div>
-        <div class="has-text-centered" style="margin-bottom: 10px;">  <h2 class="subtitle is-6"><i>A person is <span style="color:#EE822F";>gripping</span> a large box <span style="color:#5e7dbd";>at the front</span>.</i></h2></div>
-        <div class="results-list">
-          <div class="item 4602 has-text-centered">
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/mdm/mdm_boxlarge_hold.mp4"
-                      type="video/mp4">
-            </video>
+       
+
+      <div class="has-text-centered" style="margin-bottom: 10px;">  <h2 class="subtitle is-5"><i>A person is <span style="color:#EE822F";>gripping</span> a large box <span style="color:#5e7dbd";>at the front</span>.</i></h2></div>
+      <div class="columns is-centered">
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/mdm/mdm_boxlarge_hold.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">MDM*</h2>
             </div>
-            <h2 class="subtitle is-6">MDM*</h2>
+          </div>       
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/prior_mdm/priormdm_boxlarge_hold.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">PriorMDM*</h2>
+            </div>
           </div>
-          <div class="item 4602 has-text-centered">
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/prior_mdm/priormdm_boxlarge_hold.mp4"
-                      type="video/mp4">
-            </video>
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/ours/ours_boxlarge_hold.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">Ours</h2>
             </div>
-            <h2 class="subtitle is-6">PriorMDM*</h2>
-          </div>
-          <div class="item 4602 has-text-centered">
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/ours/ours_boxlarge_hold.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-            <h2 class="subtitle is-6">Ours</h2>
-          </div>
-        </div>
-
-
-
-
-
-
-
-
-
-        <div class="has-text-centered" style="margin-bottom: 10px;margin-top: 20px;">  <h2 class="subtitle is-6"><i>A person is <span style="color:#EE822F";>sitting</span> on the chair.</i></h2></div>
-        <div class="results-list">
-          <div class="item 4602 has-text-centered">
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/mdm/mdm_chair_sit.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-            <h2 class="subtitle is-6">MDM*</h2>
-          </div>
-          <div class="item 4602 has-text-centered">
-            
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/prior_mdm/priormdm_chair_sit.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-            <h2 class="subtitle is-6">PriorMDM*</h2>
-          </div>
-          <div class="item 4602 has-text-centered">
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/ours/ours_chair_sit.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-            <h2 class="subtitle is-6">Ours</h2>
-          </div>
-        </div>
-
-
-
-
-
-
-
-
-
-        <div class="has-text-centered" style="margin-bottom: 10px;margin-top: 20px;">  <h2 class="subtitle is-6"><i>A person is <span style="color:#EE822F";>perching</span> on a stool.</i></h2></div>
-        <div class="results-list">
-          <div class="item 4602 has-text-centered">
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/mdm/mdm_stool_sit.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-            <h2 class="subtitle is-6">MDM*</h2>
-          </div>
-          <div class="item 4602 has-text-centered">
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/prior_mdm/priormdm_stool_sit.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-            <h2 class="subtitle is-6">PriorMDM*</h2>
-          </div>
-          <div class="item 4602 has-text-centered">
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/ours/ours_stool_sit.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-            <h2 class="subtitle is-6">Ours</h2>
-          </div>
-        </div>
-
-
-
-
-
-
-      <div class="has-text-centered" style="margin-bottom: 10px;margin-top: 20px;">  <h2 class="subtitle is-6"><i>A person <span style="color:#EE822F";>holds</span> a yogamat <span style="color:#5e7dbd";>in fromt him</span>.</i></h2></div>
-        <div class="results-list">
-          <div class="item 4602 has-text-centered">
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/mdm/mdm_yogamat_grip.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-            <h2 class="subtitle is-6">MDM*</h2>
-          </div>
-          <div class="item 4602 has-text-centered">
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/prior_mdm/priormdm_yogamat_grip.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-            <h2 class="subtitle is-6">PriorMDM*</h2>
-          </div>
-          <div class="item 4602 has-text-centered">
-            <div class="videobox">
-            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
-              <source src="./static/images/compare/ours/ours_yogamat_grip.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-            <h2 class="subtitle is-6">Ours</h2>
           </div>
       </div>
 
+
+
+      <div class="has-text-centered" style="margin-bottom: 10px;margin-top: 20px;">  <h2 class="subtitle is-5"><i>A person is <span style="color:#EE822F";>sitting</span> on the chair.</i></h2></div>
+      <div class="columns is-centered">
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/mdm/mdm_chair_sit.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">MDM*</h2>
+            </div>
+          </div>       
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/prior_mdm/priormdm_chair_sit.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">PriorMDM*</h2>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/ours/ours_chair_sit.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">Ours</h2>
+            </div>
+          </div>
       </div>
-    </section>
+
+
+      <div class="has-text-centered" style="margin-bottom: 10px;margin-top: 20px;">  <h2 class="subtitle is-5"><i>A person is <span style="color:#EE822F";>perching</span> on a stool.</i></h2></div>
+      <div class="columns is-centered">
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/mdm/mdm_stool_sit.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">MDM*</h2>
+            </div>
+          </div>       
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/prior_mdm/priormdm_stool_sit.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">PriorMDM*</h2>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/ours/ours_stool_sit.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">Ours</h2>
+            </div>
+          </div>
+      </div>
+
+
+
+      <div class="has-text-centered" style="margin-bottom: 10px;margin-top: 20px;">  <h2 class="subtitle is-5"><i>A person <span style="color:#EE822F";>holds</span> a yogamat <span style="color:#5e7dbd";>in fromt him</span>.</i></h2></div>
+      <div class="columns is-centered">
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/mdm/mdm_yogamat_grip.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">MDM*</h2>
+            </div>
+          </div>       
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/prior_mdm/priormdm_yogamat_grip.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">PriorMDM*</h2>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/compare/ours/ours_yogamat_grip.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <h2 class="subtitle is-6">Ours</h2>
+            </div>
+          </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
 
 
 
@@ -584,43 +637,56 @@
         </div>
 
   
-        <div class="has-text-centered" style="margin-bottom: 10px;">  <h2 class="subtitle is-6"><span style="font-weight:bold";>Prompt: </span><i> A person is <span style="color:#EE822F";>gripping</span> a large box <span style="color:#5e7dbd";>at the front</span>.</i></h2></div>
+        <div class="has-text-centered" style="margin-bottom: 10px;">  <h2 class="subtitle is-5"><span style="font-weight:bold";>Prompt: </span><i> A person is <span style="color:#EE822F";>gripping</span> a large box <span style="color:#5e7dbd";>at the front</span>.</i></h2></div>
         <br> 
-        <div class="results-list2">
-            <div class="item 4602" style="margin-left: 5px; margin-right:5px; width:33%">
-              <h2 class="title is-5" >W/o CM & Interaction Correction</h2>
-              <h2 class="subtitle is-6">Without Communication Module (CM) and Interaction Correction, the model can not effectively learn spatial relations between humans and objects.</h2>
-              <div class="videobox">
-              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+
+        <div class="columns is-centered">
+
+          <!-- W/o realism guidance. -->
+          <div class="column">
+            <div class="content">
+              <h2 class="title is-4">W/o CM & Interaction Correction</h2>
+              <p>
+                Without Communication Module (CM) and Interaction Correction, the model can not effectively learn spatial relations between humans and objects.
+              </p>
+              <video id="realism" autoplay controls muted loop playsinline height="100%">
                 <source src="./static/images/ablations/wo_cross_attn.mp4"
                         type="video/mp4">
               </video>
-              </div>
-             
             </div>
-            <div class="item 4602" style="margin-left: 5px; margin-right:5px; width:33%">
-              <h2 class="title is-5" >w/o Interaction Correction</h2>
-              <h2 class="subtitle is-6">Without Interaction Correction, the generated HOIs cannot follow the accurate and close human-object contacting, yielding unreal and incoherent interactions.</h2>
-              <div class="videobox">
-              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+          </div>
+
+          <!-- W/o realism guidance. -->
+          <div class="column">
+            <div class="content">
+              <h2 class="title is-4">W/o Interaction Correction</h2>
+              <p>
+                Without Interaction Correction, the generated HOIs cannot follow the accurate and close human-object contacting, yielding unreal and incoherent interactions.
+              </p>
+              <video id="realism" autoplay controls muted loop playsinline height="100%">
                 <source src="./static/images/ablations/wo_interaction.mp4"
                         type="video/mp4">
               </video>
-              </div>
-
             </div>
-            <div class="item 4602 " style="margin-left: 5px; margin-right:5px; width:33%">
-              <h2 class="title is-5" >Full Method</h2>
-              <h2 class="subtitle is-6">The visualization validates that our complete model significantly outperforms in generating both realistic and accurate human-object interactions.</h2>
-              <div class="videobox">
-              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+          </div>
+
+
+          <!-- W/o realism guidance. -->
+          <div class="column">
+            <div class="content">
+              <h2 class="title is-4">Full Method</h2>
+              <p>
+                The visualization validates that our complete model significantly outperforms in generating both realistic and accurate human-object interactions.
+              </p>
+              <video id="realism" autoplay controls muted loop playsinline height="100%">
                 <source src="./static/images/ablations/full.mp4"
                         type="video/mp4">
               </video>
-              </div>
             </div>
-        </div>
+          </div>
   
+      </div>
+  </div>
   </div>
  </section>
 
