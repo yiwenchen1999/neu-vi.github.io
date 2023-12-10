@@ -707,6 +707,93 @@
 </section>
 
 
+
+<section class="hero is-light is-small">
+  <br>
+  <div class="container is-max-desktop">
+    <!-- unnatural. -->
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">With extremely unnatural spatial control signals</h2>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        We show the model's tolerance for inherently unnatural guidance.
+      </p>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        The first case is about teleportation. 
+        We give two distant control signals to adjacent frames. 
+        You can see that the human is running to the second point quickly and naturally.
+      </p>
+    </div>
+    <div class="content has-text-centered">
+      <video id="replay-video"
+              autoplay  
+              controls
+              muted
+              preload
+              loop
+              playsinline
+              width="100%">
+        <source src="./static/images/extreme_case1.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+    The second case is the walk forward along a spiral line.
+    The human can follow the spiral line even though this kind of spatial control signal extremely rare.
+    <div class="content has-text-centered">
+      <video id="replay-video"
+              autoplay  
+              controls
+              muted
+              preload
+              loop
+              playsinline
+              width="100%">
+        <source src="./static/images/extreme_case2.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+    <!--/ unnatural. -->
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <br>
+  <div class="container is-max-desktop">
+    <!-- unnatural. -->
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Condition on only one modality (text or spatial control signal only)</h2>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        We show the results with only one modality as condition.
+        In this case, the spatial control signal is used on the pelvis while the text is used to describe the hand activity.
+        This results show that the model can effectively comprehend and follow instructions in one modality.
+      </p>
+    </div>
+    <div class="content has-text-centered">
+      <video id="replay-video"
+              autoplay  
+              controls
+              muted
+              preload
+              loop
+              playsinline
+              width="100%">
+        <source src="./static/images/separate.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+    <!--/ unnatural. -->
+  </div>
+</section>
+
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
