@@ -1,3 +1,8 @@
+@font-face {
+  font-family:'eunike';
+  src:url("fonts/MouldyCheeseRegular-WyMWG.ttf");
+}
+
 body {
   font-family: 'Noto Sans', sans-serif;
 }
@@ -137,18 +142,8 @@ body {
   width: 300px;
 }
 
-.results-list {
-  margin-left: 20%;
-  margin-right: 20%;
-  display: flex;
-  justify-content: center;
-}
-
-.results-list2 {
-  margin-left: 10%;
-  margin-right: 10%;
-  display: flex;
-  justify-content: center;
+.handwriting {
+  font-family: 'eunike';
 }
 
 .results-carousel video {
@@ -190,6 +185,7 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
 
 
 
