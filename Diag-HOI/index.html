@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Diagnosing Human-object Interaction Detectors">
+  <meta name="keywords" content="OmniControl">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OmniControl</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Diagnosing Human-object Interaction Detectors</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://fangruizhu.github.io/">Fangrui Zhu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://ymingxie.github.io/">Yiming Xie</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://weidixie.github.io/">Weidi Xie</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jianghz.me/">Huaizu Jiang</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Northeastern University,</span>
+            <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2308.08529.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/neu-vi/Diag-HOI"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+<!-- <section class="hero teaser"> -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <img width="60%" src="./static/images/HOI/teaser.png" />
+      <h6 class="content has-text-justified">
+        Illustration of two sub-tasks in HOI detection. (a)
+        Detect all human-object pairs that have interactions (person and
+        snowboard). (b) Classify the interactions between them (hold,
+        jump, ride, stand on, and wear).
+      </h6>
+      
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We have witnessed significant progress in human-object interaction (HOI) detection.
+            The reliance on mAP (mean Average Precision) scores as a summary metric, however, does not provide sufficient insight into the nuances of model performance (\eg, why one model is better than another), which can hinder further innovation in this field.
+            To address this issue, 
+            in this paper, we introduce a diagnosis toolbox to provide a detailed quantitative breakdown analysis of HOI detection models, inspired by the success of object detection diagnosis toolboxes.
+            We first conduct holistic investigations in the pipeline of HOI detection.
+            By defining a set of errors and the oracles to fix each of them, we can have a quantitative analysis of the significance of different errors according to the $mAP$ improvement obtained from fixing each error.
+            We then delve into two sub-tasks of HOI detection:  human-object pair detection and interaction classification, respectively.
+            For the first detection task, 
+            we compute the coverage of ground-truth human-object pairs as well as the noisiness level in the detection results.
+            For the second classification task, we measure a model's performance of differentiating positive and negative detection results
+            and also classify the actual interactions when the human-object pairs are correctly detected.
+            We analyze eight state-of-the-art HOI detection models and provide valuable diagnosis insights to foster future research.
+            For instance, our diagnosis shows that the state-of-the-art model RLIPv2 outperforms others mainly because it significantly improves the multi-label interaction classification accuracy.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- <br>
+    <br> -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+    <!-- Paper video. -->
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+            <img width="150%" src="./static/images/HOI/error_type_new.png" />
+            <h6 class="subtitle has-text-centered">
+              Figure 1: Definitions of Different Error Types
+            </h6>    
+          <p>
+            Inspired by the object detection diagnosis toolbox TIDE, we define a set of error types (Fig. 1) as well as oracles (Fig. 2) to fix them in the HOI detection pipeline across the human-object pair detection and interaction classification tasks.
+            The mAP improvement, obtained by applying the oracle to each error, is used to measure the significance of different errors.
+            The larger mAP improvement can be obtained for a particular type of error, the more it contributes to the failure of an HOI detector.
+            We then delve into the human-object pair detection and interaction classification tasks, respectively, and conduct detailed studies on eight HOI detection models, shown in Tab. 1.
+          </p>
+
+          <div class="column">
+            <img src="./static/images/HOI/fix_different_errors.png" />
+            <h6 class="subtitle has-text-centered">
+              Figure 2: Oracles of Different Error Types
+            </h6> 
+            <p>
+              We then delve into the human-object pair detection and interaction classification tasks, respectively, and conduct detailed studies on eight HOI detection models, shown in Tab. 1.
+            </p>
+  
+            <img src="./static/images/HOI/model_details.png" />
+            <h6 class="subtitle has-text-centered">
+              Table 1: Details of HOI detection models used in our analysis.
+            </h6>  
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- <br>
+    <br> -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Diagnosis Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            The mAP improvement for the seven types of errors as well as FPs and FNs on both HICO-DET and V-COCO are shown in Fig. 3 and 4.
+            For both one-stage and two-stage approaches, most of the errors are from two sources: incorrect localization of the object in a human-object pair and incorrect interaction classification even if the localization is correct.
+          </p>
+            <img src="./static/images/HOI/fix_diff_type.png" />
+            <h6 class="subtitle has-text-centered">
+              Figure 3: mAP improvement by fixing different error types on HICO-DET and VCOCO.
+            </h6>    
+            <img src="./static/images/HOI/fix_rare_non_rare.png" />
+            <h6 class="subtitle has-text-centered">
+              Figure 4: mAP improvement by fixing different types of errors for the rare and non-rare HOI categories on HICO-DET.
+            </h6> 
+        </div>
+          <div class="content has-text-justified">
+            <p> 
+            Generally, two-stage approaches tend to have higher precision for the human-object pair detection task, meaning less noise in the detection. The recall is roughly the same as one-stage detector.
+            However, none of the two-stage nor one-stage approaches' recall value is high enough on the challenging HICO-DET benchmark. It shows that the human-object pair detection is a bottleneck.
+            </p> 
+            <img src="./static/images/HOI/pair_rec_and_inter_cls.png" />
+            <h6 class="subtitle has-text-centered">
+              Table 2: Results of human-object pair detection and interaction classification.
+            </h6>  
+            <p>
+              The HOI categories follow a long-tail distribution, where some interaction and object classes are more frequent than others.
+              The overall distribution of error significance are the same on both rare and non-rare HOI categories as in Fig. 4.
+              Because of less training data are available for rare HOI categories, the accuracy of human-object pair detection (Pair Recall and Pair Precision) and interaction classification (Inter. mAP ) are consistently lower on rare categories.
+            </p>          
+          <img src="./static/images/HOI/rare_non_rare_hicodet.png" />
+            <h6 class="subtitle has-text-centered">
+              Table 3: Diagnosis results for rare and non-are HOI categories on HICO-DET.
+            </h6>  
+          <p>
+            Better backbones lead to less error significance (due to less mAP improvement) for incorrect object localization in a human-object pair on both HICO-DET and V-COCO.
+          </p>
+          <img src="./static/images/HOI/diff_backbone.png" />
+            <h6 class="subtitle has-text-centered">
+              Figure 5: mAP improvement of different backbones on HICO-DET and V-COCO.
+            </h6> 
+        </div>
+      </div>
+    </div>
+
+  </div>
+<br>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zhu2023diagnosing,
+      title={Diagnosing human-object interaction detectors},
+      author={Zhu, Fangrui and Xie, Yiming and Xie, Weidi and Jiang, Huaizu},
+      journal={arXiv preprint arXiv:2308.08529},
+      year={2023}
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Thanks to <a href="https://keunhong.com/">Keunhong Park</a> for the <a href="https://nerfies.github.io/">website template</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
